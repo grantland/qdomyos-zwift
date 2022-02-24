@@ -33,3 +33,7 @@ template-examples/train-program-saver/*.json
 template-examples/train-program-saver/.eslintrc.js
 template-examples/train-program-saver/.jshintrc
 template-examples/train-program-saver/debug.js
+
+# Qt-es
+*.pro.user
+*build-*
