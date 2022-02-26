@@ -35,6 +35,7 @@ class bike : public bluetoothdevice {
     metric currentSteeringAngle() { return m_steeringAngle; }
 
   public Q_SLOTS:
+    virtual void changeResistanceRange(int8_t lower, int8_t upper);
     virtual void changeResistance(int8_t res);
     virtual void changeCadence(int16_t cad);
     virtual void changePower(int32_t power);
@@ -52,6 +53,8 @@ class bike : public bluetoothdevice {
     void steeringAngleChanged(double angle);
 
   protected:
+    int16_t RequestedLowerResistance = -1;
+    int16_t RequestedUpperResistance = -1;
     metric RequestedResistance;
     metric RequestedPelotonResistance;
     metric RequestedCadence;
