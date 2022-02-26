@@ -267,7 +267,7 @@ homeform::homeform(QQmlApplicationEngine *engine, bluetooth *bl) {
 
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &homeform::update);
-    timer->start(1s);
+    timer->start(200ms);
 
     backupTimer = new QTimer(this);
     connect(backupTimer, &QTimer::timeout, this, &homeform::backup);
