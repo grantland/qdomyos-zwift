@@ -208,7 +208,7 @@ homeform::homeform(QQmlApplicationEngine *engine, bluetooth *bl) {
     steeringAngle = new DataObject(QStringLiteral("Steering"), QStringLiteral("icons/icons/cadence.png"),
                                    QStringLiteral("0"), false, QStringLiteral("steeringangle"), 48, labelFontSize);
     peloton_offset =
-        new DataObject(QStringLiteral("Peloton Offset"), QStringLiteral("icons/icons/clock.png"), QStringLiteral("0"),
+        new DataObject(QStringLiteral("Peloton Rem."), QStringLiteral("icons/icons/clock.png"), QStringLiteral("0"),
                        true, QStringLiteral("peloton_offset"), valueElapsedFontSize, labelFontSize);
     strokesCount = new DataObject(QStringLiteral("Strokes Count"), QStringLiteral("icons/icons/cadence.png"),
                                   QStringLiteral("0"), false, QStringLiteral("strokes_count"), 48, labelFontSize);
@@ -1963,8 +1963,8 @@ void homeform::update() {
         pidHR->setValue(QString::number(treadmill_pid_heart_zone));
 
         if (trainProgram) {
-            peloton_offset->setValue(QString::number(trainProgram->offsetElapsedTime()) + QStringLiteral(" sec."));
-            peloton_offset->setSecondLine(trainProgram->remainingTime().toString("h:mm:ss"));
+            peloton_offset->setValue(trainProgram->remainingTime().toString("h:mm:ss"));
+            peloton_offset->setSecondLine(QString::number(trainProgram->offsetElapsedTime()) + QStringLiteral(" sec."));
             remaningTimeTrainingProgramCurrentRow->setValue(
                 trainProgram->currentRowRemainingTime().toString(QStringLiteral("h:mm:ss")));
             targetMets->setValue(QString::number(trainProgram->currentTargetMets(), 'f', 1));

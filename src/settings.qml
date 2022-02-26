@@ -2404,7 +2404,7 @@ import Qt.labs.settings 1.0
 
                     AccordionCheckElement {
                         id: pelotonOffsetEnabledAccordion
-                        title: qsTr("Peloton Offset")
+                        title: qsTr("Peloton Remaining")
                         linkedBoolSetting: "tile_peloton_offset_enabled"
                         settings: settings
                         accordionContent: RowLayout {
