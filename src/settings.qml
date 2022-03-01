@@ -35,7 +35,7 @@ import Qt.labs.settings 1.0
             property real weight: 75.0
             property real ftp: 200.0
             property string user_email: ""
-            property string user_nickname: ""
+            property string user_nickname: "default"
             property bool miles_unit: false
             property bool pause_on_start: false
             property bool treadmill_force_speed: false
@@ -492,7 +492,7 @@ import Qt.labs.settings 1.0
                         spacing: 10
                         Label {
                             id: labelNickname
-                            text: qsTr("Nickname:")
+                            text: qsTr("Profile name:")
                             Layout.fillWidth: true
                         }
                         TextField {
